@@ -1,0 +1,26 @@
+{
+  "name": "hard-wax-records",
+  "version": "1.0.0",
+  "description": "- npm init - npm install \t- express \t- mongoose \t- hbs \t- method-override \t- morgan - Create folders \t- controllers \t- db \t- models \t- public \t- routes \t- views - Create `server.js` \t- Require necessary files \t\t- `const express = require(‘express’)` \t\t- `const app = express()` \t\t- `const methodOverride = require(‘method-override’)` \t\t- `const logger = require(‘morgan’)` \t\t- `const routes = require(‘./routes/index’)` \t- Register Middleware \t\t- `app.use(express.urlencoded({ extended: true }))` \t\t- `app.use(express.json())` \t\t- `app.use(methodOverride(‘_method’))` \t- Set view engine \t\t- `app.set(‘view engine’, ‘hbs’)` \t- Set public directory \t\t- `app.use(express.static(__dirname + ‘/public’))` \t- Set logger \t\t- `app.use(logger(‘dev’))` \t- Set routes middleware \t\t- `app.use(‘/‘, routes)` \t- Set app to listen to PORT \t\t- `const PORT = process.env.PORT || 3001` \t\t- `app.listen...` - In `routes/index.js` \t- Require express and Router \t\t- `const express = require(‘express’)` \t\t- `const router = express.Router()` \t- Add a simple GET route and test it \t- `module.exports = router` - In `db/connection.js` \t- `const mongoose = require(‘mongoose’)` \t- `mongoose.connect(‘mongoldb://localhost/welp').then(() => {})` \t- `module.exports = mongoose`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msommerfield/Hard-Wax-Records.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msommerfield/Hard-Wax-Records/issues"
+  },
+  "homepage": "https://github.com/msommerfield/Hard-Wax-Records#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.17",
+    "morgan": "^1.9.1"
+  }
+}
