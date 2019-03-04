@@ -1,41 +1,61 @@
-const Record = require('../models/Vinyl.js')
+const User = require('../models/User.js')
+const { Vinyl } = require('../models/Vinyl.js')
 
 const vinylController = {
     index: (req, res) => {
-    //   Shop.find().then(shops => {
-        res.send("hello world")
-        // res.render('index', {records})
-      })
+        User.findById(req.params.userId)
+            .populate('vinyls')
+            .then(user => {
+                res.send(user.vinyls)
+            })
     },
-//     new: (req, res) => {
-//       res.render(`new`)
-//     },
-//     create: (req, res) => {
-//       Shop.create(req.body).then(shop => {
-//         res.redirect('/')
-//       })
-//     },
-//     show: (req, res) => {
-//       Shop.findById(req.params.shopId).then(shop => {
-//         res.render('show', {shop})
-//       })
-//     },
-//     edit: (req, res) => {
-//       Shop.findById(req.params.shopId).then(shop => {
-//         res.render('edit', {shop})
-//       })
-//     },
-//     update: (req, res) => {
-//       Shop.findByIdAndUpdate(req.params.shopId, req.body, {new: true}).then(() => {
-//         res.redirect(`/${req.params.shopId}`)
-//       })
-//     },
-//     delete: (req, res) => {
-//       Shop.findByIdAndDelete(req.params.shopId).then(() => {
-//         console.log(`Deleted shop with the id of ${req.params.shopId}`)
-//         res.redirect(`/`)
-//       })
-//     }
-//   }
-  
+    new: (req, res) => {
+        res.render('chirps/new', {
+            userId: req.params.userId
+        })
+    },
+    create: (req, res) => {
+        User.findById(req.params.userId)
+            .then(user => {
+                Vinyl.create({
+                    content: req.body.content,
+                    comments: [{content: 'Vinyl is dope'}]
+                })
+                .then(newVinyl => {
+                    user.vinyls.push(newVinyl)
+                    user.save()
+                    res.redirect(`/users/${req.params.userId}`)
+                })
+            })
+    },
+    show: (req, res) => {
+        Vinyl.findById(req.params.vinylId).then(vinyl => {
+            res.render('vinyls/show', {vinyl, userId: req.params.userId})
+        })
+    },
+    edit: (req, res) => {
+        Vinyl.findById(req.params.vinylId)
+        .then(vinyl => {
+            res.render('vinyls/edit', {
+                vinyl,
+                userId: req.params.userId,
+                vinylId: req.params.vinylId
+            })
+        })
+    },
+    update: (req, res) => {
+        Vinyl.findByIdAndUpdate(req.params.vinylId, {content: req.body.content}, {new: true}).then(updatedVinyl => {
+            res.redirect(`/users/${req.params.userId}/vinylss/${req.params.vinylId}`)
+        })
+    },
+    delete: (req, res) => {
+        Vinyl.findByIdAndDelete(req.params.vinylId).then(() => {
+            console.log('deleted vinyl')
+            res.redirect(`/users/${req.params.userId}`)
+        })
+    }
+}
+
+
 module.exports = vinylController
+
