@@ -6,6 +6,7 @@
 
 ## Project Links
 [Trello Board](https://trello.com/b/9fpi8TCx/hard-wax-records)
+[Heroku](https://dashboard.heroku.com/apps/warm-spire-96531) //change link to actual heroku of project
 
 ## Technical Specifications
 This application has:
