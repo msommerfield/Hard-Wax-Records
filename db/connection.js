@@ -5,7 +5,7 @@ if (process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI);
 }
 else {
-    mongoose.connect(`mongodb://localhost/Hard-Wax-Records`);
+    mongoose.connect(`mongodb://localhost/Hard-Wax-Records`, { useNewUrlParser: true });
 }
 mongoose.connection.on(`error`, function (err) {
     console.error(`MongoDB connection error: ` + err);
