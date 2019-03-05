@@ -4,6 +4,7 @@ const router = require('./routes/index.js')
 const methodOverride = require('method-override')
 const mongoose = require("mongoose")
 const logger = require('morgan')
+mongoose.connect(process.env.MONGODB_uri, { useNewUrlParser: true})
 
 app.set('view engine', 'hbs')
 app.use(express.static(__dirname + '/public')); // VERY IMPORTANT!! Make sure to add a '/'
