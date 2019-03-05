@@ -1,65 +1,58 @@
 const User = require('../models/User.js')
-const { Vinyl } = require('../models/Vinyl.js')
+const  Vinyl  = require('../models/Vinyl.js')
+const Review = require('../models/Review.js')
 
 const userController = {
     index: (req, res) => {
-        res.send("hi from index")
-        // User.findById(req.params.userId)
-        //     .populate('vinyls')
-        //     .then(user => {
-        //         res.send(user.vinyl)
-        //     })
+        Vinyl.find().then(vinyls => {
+            res.render('vinyls/index', {vinyls})
+        })
     },
     new: (req, res) => {
-        res.send("hi from new")
-    //     res.render('vinylss/new', {
-    //         userId: req.params.userId
-    //     })
+        res.render('vinyls/new', {
+            userId: req.params.userId
+        })
     },
     create: (req, res) => {
-        res.send("hi from create")
-    //     User.findById(req.params.userId)
-    //         .then(user => {
-    //             Vinyl.create({
-    //                 content: req.body.content,
-    //                 comments: [{content: 'Vinyl is dope'}]
-    //             })
-    //             .then(newVinyl => {
-    //                 user.vinyls.push(newVinyl)
-    //                 user.save()
-    //                 res.redirect(`/users/${req.params.userId}`)
-    //             })
-    //         })
+        User.findById(req.params.userId)
+            .then(user => {
+                Vinyl.create({
+                    content: req.body.content,
+                    Comments: [{content: 'Vinyl is dope'}]
+                })
+                .then(newVinyl => {
+                    user.vinyls.push(newVinyl)
+                    user.save()
+                    res.redirect(`/users/${req.params.userId}`)
+                })
+            })
     },
     show: (req, res) => {
-        res.send("hi from show")
-    //     Vinyl.findById(req.params.vinylId).then(vinyl => {
-    //         res.render('vinyls/show', {vinyl, userId: req.params.userId})
-    //     })
+        Vinyl.findById(req.params.vinylId).then(vinyl => {
+            res.render('vinyls/show', {vinyl, userId: req.params.userId})
+        })
     },
     edit: (req, res) => {
-        res.send("hi from edit")
-    //     Vinyl.findById(req.params.vinylId)
-    //     .then(vinyl => {
-    //         res.render('vinyls/edit', {
-    //             vinyl,
-    //             userId: req.params.userId,
-    //             vinylId: req.params.vinylId
-    //         })
-    //     })
+        Vinyl.findById(req.params.vinylId)
+        .then(vinyl => {
+            res.render('vinyls/edit', {
+                vinyl,
+                userId: req.params.userId,
+                vinylId: req.params.vinylId
+            })
+        })
 },
     update: (req, res) => {
         res.send("hi from update")
-    //     Vinyl.findByIdAndUpdate(req.params.vinylId, {content: req.body.content}, {new: true}).then(updatedVinyl => {
-    //         res.redirect(`/users/${req.params.userId}/vinyls/${req.params.vinylId}`)
-    //     })
+        Vinyl.findByIdAndUpdate(req.params.vinylId, {content: req.body.content}, {new: true}).then(updatedVinyl => {
+            res.redirect(`/users/${req.params.userId}/vinyls/${req.params.vinylId}`)
+        })
     },
     delete: (req, res) => {
-        res.send("hi from delete")
-    //     Vinyl.findByIdAndDelete(req.params.vinylId).then(() => {
-    //         console.log('deleted vinyl')
-    //         res.redirect(`/users/${req.params.userId}`)
-    //     })
+        Vinyl.findByIdAndDelete(req.params.vinylId).then(() => {
+            console.log('deleted vinyl')
+            res.redirect(`/users/${req.params.userId}`)
+        })
 }
 }
 
