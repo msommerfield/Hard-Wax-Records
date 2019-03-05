@@ -28,7 +28,7 @@ const userController = {
             })
     },
     show: (req, res) => {
-        Vinyl.findById(req.params.vinylId).then(vinyl => {
+        Vinyl.findById(req.params.userId).then(vinyl => {
             res.render('vinyls/show', {vinyl, userId: req.params.userId})
         })
     },
