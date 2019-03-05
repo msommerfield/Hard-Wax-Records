@@ -17,12 +17,12 @@ const Review = new Schema({
 const Vinyl = new Schema({
   artist: String,
   albumName: String,
-  releaseDate: {type: Date},
-  albumArt: String,
+  releaseDate: Date,
+  imgLink: String,
   reviews: [Review]
 });
 
 module.exports = {
-  Chirp: mongoose.model("Vinyl", Vinyl),
-  Comment: mongoose.model("Review", Review)
+  Vinyl: mongoose.model("Vinyl", Vinyl),
+  Review: mongoose.model("Review", Review)
 };
