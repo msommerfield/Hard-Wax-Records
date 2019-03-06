@@ -16,37 +16,44 @@ const atlreview = new Review ({
 
 const ageofreview = new Review ({
     userName: "Bonnie",
-    content: "A synthesiser melody follows, wide-eyed with wonderment, then a melancholy melodica, sighing in the breeze."
+    content: "A synthesiser melody follows, wide-eyed with wonderment, then a melancholy melodica, sighing in the breeze.",
+    rating: [ageofrating]
 });
 
 const kanyereview = new Review ({
     userName: "Grace",
-    content: "I miss the old Kanye, but his head was still big then."
+    content: "I miss the old Kanye, but his head was still big then.",
+    rating: [kanyerating]
 });
 
 const whitreview= new Review ({
     userName: "Freddy",
-    content: "Can a duo be a supergroup? Because they are."
+    content: "Can a duo be a supergroup? Because they are.",
+    rating: [whitrating]
 });
 
 const angreview= new Review ({
     userName: "Emily",
-    content: "She's dear diarying and has a truly unique voice."
+    content: "She's dear diarying and has a truly unique voice.",
+    rating: [angelrating]
 });
 
 const blondereview= new Review ({
     userName: "Sadie",
-    content: "Feminist dream pop masterwork in the best way possible."
+    content: "Feminist dream pop masterwork in the best way possible.",
+    rating: [blonderating]
 });
 
 const guccireview= new Review ({
     userName: "Lindsey",
-    content: "Living off of the same road that Gucci Mane did, it is awesome to hear about all of his stories at the Texaco on Gresham, Bouldercrest Rd, and throughout East Atlanta. His music is dope and it makes it even better that he continued to write while in prison. Also, what better way to get into the Christmas spirit than with East Atlanta Santa himself!."
+    content: "Living off of the same road that Gucci Mane did, it is awesome to hear about all of his stories at the Texaco on Gresham, Bouldercrest Rd, and throughout East Atlanta. His music is dope and it makes it even better that he continued to write while in prison. Also, what better way to get into the Christmas spirit than with East Atlanta Santa himself!.",
+    rating: [guccirating]
 });
 
 const tupacreview= new Review ({
     userName: "Cam",
-    content: "The magnum opus of his career."
+    content: "The magnum opus of his career.",
+    rating: [tupacrating]
 });
 
 //Ratings
