@@ -1,5 +1,5 @@
 const mongoose = require("./connection.js");
-const User = require("../models/User.js");
+const User = require("../models/Rating.js/index.js");
 const Vinyl = require("../models/Vinyl.js");
 const Review = require("../models/Review")
 
@@ -35,7 +35,7 @@ const blondereview= new Review ({
 
 const guccireview= new Review ({
     userName: "Lindsey",
-    content: "He's just dope af."
+    content: "Living off of the same road that Gucci Mane did, it is awesome to hear about all of his stories at the Texaco on Gresham, Bouldercrest Rd, and throughout East Atlanta. His music is dope and it makes it even better that he continued to write while in prison. Also, what better way to get into the Christmas spirit than with East Atlanta Santa himself!."
 })
 
 const tupacreview= new Review ({
@@ -125,7 +125,7 @@ const  tupac= new Vinyl({
     artist: "2Pac",
     albumName: "Me Against the World",
     releaseDate: new Date("<1995-03-14>"),
-    imgLink: "https://i.imgur.com/G7lA1eN.jpg",
+    imgLink: "https://i.imgur.com/CfchBOD.jpg",
     reviews: [tupacreview]
 });
 

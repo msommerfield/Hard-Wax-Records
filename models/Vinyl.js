@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-
-
 const VinylSchema = new Schema({
   artist: String,
   albumName: String,
@@ -10,7 +8,6 @@ const VinylSchema = new Schema({
   imgLink: String,
   reviews: []
 });
-
 
 
 module.exports = mongoose.model('Vinyl', VinylSchema)
