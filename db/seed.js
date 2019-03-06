@@ -3,10 +3,15 @@ const Rating = require("../models/Rating.js");
 const Vinyl = require("../models/Vinyl.js");
 const Review = require("../models/Review");
 
+const atlrating= new Rating ({
+    starReview: 5
+});
+
 //Reviews
 const atlreview = new Review ({
     userName: "Kanye",
-    content: "Andre and Big Boi display a unique ability to describe ghetto life while offering up life-affirming possibilities"
+    content: "Andre and Big Boi display a unique ability to describe ghetto life while offering up life-affirming possibilities",
+    rating: [atlrating]
 });
 
 const ageofreview = new Review ({
@@ -45,9 +50,7 @@ const tupacreview= new Review ({
 });
 
 //Ratings
-const atlrating= new Rating ({
-    starReview: 5
-});
+
 
 const ageofrating= new Rating ({
     starReview: 4

@@ -8,10 +8,7 @@ const ReviewSchema = new Schema({
         type: Date,
         default: Date.now()
     },
-    author: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-    }
+    rating: []
 });
 
 module.exports = mongoose.model('Review', ReviewSchema)

@@ -6,7 +6,7 @@ const VinylSchema = new Schema({
   albumName: String,
   releaseDate: Date,
   imgLink: String,
-  reviews: []
+  reviews: [],
 });
 
 

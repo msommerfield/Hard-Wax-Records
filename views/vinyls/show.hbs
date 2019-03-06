@@ -3,7 +3,11 @@
 <p>{{vinyl.releaseDate}}</p> 
 <img src="{{vinyl.imgLink}}" alt="Album Cover">
 {{#each vinyl.reviews}}
-<p>{{rating}}</p>
+    {{!-- each review --}}
+    {{#each rating}}
+        {{!-- each rating --}}
+        Star {{starReview}}
+    {{/each}}  
 <p>{{content}}</p>
 {{/each}}
   
