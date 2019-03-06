@@ -1,70 +1,83 @@
 const mongoose = require("./connection.js");
-const User = require("../models/Rating.js/index.js");
+const Rating = require("../models/Rating.js");
 const Vinyl = require("../models/Vinyl.js");
-const Review = require("../models/Review")
+const Review = require("../models/Review");
 
+//Reviews
 const atlreview = new Review ({
     userName: "Kanye",
     content: "Andre and Big Boi display a unique ability to describe ghetto life while offering up life-affirming possibilities"
-})
+});
 
 const ageofreview = new Review ({
-    userName: "Jimbo",
+    userName: "Bonnie",
     content: "A synthesiser melody follows, wide-eyed with wonderment, then a melancholy melodica, sighing in the breeze."
-})
+});
 
 const kanyereview = new Review ({
-    userName: "Kendrick",
+    userName: "Grace",
     content: "I miss the old Kanye, but his head was still big then."
-})
+});
 
 const whitreview= new Review ({
     userName: "Freddy",
     content: "Can a duo be a supergroup? Because they are."
-})
+});
 
 const angreview= new Review ({
-    userName: "Joanie",
+    userName: "Emily",
     content: "She's dear diarying and has a truly unique voice."
-})
+});
 
 const blondereview= new Review ({
     userName: "Sadie",
     content: "Feminist dream pop masterwork in the best way possible."
-})
+});
 
 const guccireview= new Review ({
     userName: "Lindsey",
     content: "Living off of the same road that Gucci Mane did, it is awesome to hear about all of his stories at the Texaco on Gresham, Bouldercrest Rd, and throughout East Atlanta. His music is dope and it makes it even better that he continued to write while in prison. Also, what better way to get into the Christmas spirit than with East Atlanta Santa himself!."
-})
+});
 
 const tupacreview= new Review ({
     userName: "Cam",
-    rating: 5,
     content: "The magnum opus of his career."
-})
+});
 
-// const Vinyl = new Schema({
-//     artist: String,
-//     albumName: String,
-//     releaseDate: new Date("<YYYY-mm-dd>"),
-//      imgLink: String,
-//     reviews: [Review]
-//   });
+//Ratings
+const atlrating= new Rating ({
+    starReview: 5
+});
 
-// const User = new Schema({
-//     firstName: String,
-//     lastName: String,
-//     userName: String,
-//     password: String,
-//     records: [
-//         {
-//         type: Schema.Types.ObjectId,
-//         ref: "Vinyl"
-//         }    
-//     ]
-//   })
+const ageofrating= new Rating ({
+    starReview: 4
+});
 
+const kanyerating= new Rating ({
+    starReview: 2
+});
+
+const whitrating= new Rating ({
+    starReview: 5
+});
+
+const angelrating= new Rating ({
+    starReview: 5
+});
+
+const blonderating= new Rating ({
+    starReview: 4
+});
+
+const guccirating= new Rating ({
+    starReview: 5
+});
+
+const tupacrating= new Rating ({
+    starReview: 5
+});
+
+//Albums
 const atliens = new Vinyl({
     artist: "Outkast",
     albumName: "ATLiens",
@@ -125,7 +138,7 @@ const  tupac= new Vinyl({
     artist: "2Pac",
     albumName: "Me Against the World",
     releaseDate: new Date("<1995-03-14>"),
-    imgLink: "https://i.imgur.com/CfchBOD.jpg",
+    imgLink: "https://i.imgur.com/HH81h28.jpg",
     reviews: [tupacreview]
 });
 
@@ -136,5 +149,7 @@ Vinyl.deleteMany({})
     .then(()=>console.log(atlreview.content + " has been added to DB"))
     .then(() => Vinyl.create(atliens, consent, kanye, whit, angel, blondeRed, gucci, tupac))
     .then(() => console.log(atliens.artist + " has been added to DB"))
+    .then(()=>Rating.create(atlrating, ageofrating, kanyerating, whitrating, angelrating, blonderating, guccirating, tupacrating))
+    .then(()=>console.log(atlreview.content + " has been added to DB"))
     .catch((err) => console.log(err))
-    .then(() => mongoose.connection.close())
+    .then(() => mongoose.connection.close());
