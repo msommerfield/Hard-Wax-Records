@@ -1,10 +1,18 @@
 {{!-- <h1>Hello world</h1> --}}
+<a href="/new">
+<button class="btn btn-outline-danger" type="submit">+ New Album</button>
+</a>
+<a href="/:userId/edit">
+<button class="btn btn-outline-danger" type="submit">Edit Album</button>
+</a>
 {{#each vinyls}}
-<p>{{artist}}</p>
+{{!-- <p>{{artist}}</p> --}}
+<div class="albums">
 <a href="/{{id}}"><img src={{imgLink}}></img></a>
+</div>
 {{#each reviews}}
-<p>{{content}}</p>
 {{/each}}
 {{/each}}
+{{!-- <p>{{content}}</p> --}}
 
 

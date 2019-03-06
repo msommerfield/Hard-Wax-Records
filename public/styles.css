@@ -7,3 +7,15 @@ img {
     width: 240px;
     height: auto;
  }
+
+ .forms {
+     text-align: center;
+ }
+
+button {
+    padding: 10px;
+}
+
+.albums {
+    padding: 15px;
+}

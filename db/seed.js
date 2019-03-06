@@ -3,9 +3,40 @@ const Rating = require("../models/Rating.js");
 const Vinyl = require("../models/Vinyl.js");
 const Review = require("../models/Review");
 
+//Ratings
+
 const atlrating= new Rating ({
     starReview: 5
 });
+
+const ageofrating= new Rating ({
+    starReview: 4
+});
+
+const kanyerating= new Rating ({
+    starReview: 2
+});
+
+const whitrating= new Rating ({
+    starReview: 5
+});
+
+const angelrating= new Rating ({
+    starReview: 5
+});
+
+const blonderating= new Rating ({
+    starReview: 4
+});
+
+const guccirating= new Rating ({
+    starReview: 5
+});
+
+const tupacrating= new Rating ({
+    starReview: 5
+});
+
 
 //Reviews
 const atlreview = new Review ({
@@ -56,36 +87,7 @@ const tupacreview= new Review ({
     rating: [tupacrating]
 });
 
-//Ratings
 
-
-const ageofrating= new Rating ({
-    starReview: 4
-});
-
-const kanyerating= new Rating ({
-    starReview: 2
-});
-
-const whitrating= new Rating ({
-    starReview: 5
-});
-
-const angelrating= new Rating ({
-    starReview: 5
-});
-
-const blonderating= new Rating ({
-    starReview: 4
-});
-
-const guccirating= new Rating ({
-    starReview: 5
-});
-
-const tupacrating= new Rating ({
-    starReview: 5
-});
 
 //Albums
 const atliens = new Vinyl({

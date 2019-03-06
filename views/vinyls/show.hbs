@@ -1,13 +1,22 @@
-<p>{{vinyl.artist}}</p>
-<p>{{vinyl.albumName}}</p>
-<p>{{vinyl.releaseDate}}</p> 
+<div class="text-center">
 <img src="{{vinyl.imgLink}}" alt="Album Cover">
+<h2>{{vinyl.artist}}</h2>
+<h2>{{vinyl.albumName}}</h2>
+<h6>Release Date:{{vinyl.releaseDate}}</h6> 
+
+<h3>Ratings</h3>
 {{#each vinyl.reviews}}
     {{!-- each review --}}
     {{#each rating}}
         {{!-- each rating --}}
-        Star {{starReview}}
+         {{starReview}} Star
     {{/each}}  
+<h3>Reviews</h3>
 <p>{{content}}</p>
 {{/each}}
-  
+        <form class="delete-form"action="/{{vinyl.id}}?_method=DELETE" method="POST">
+            <input class="btn btn-outline-danger" type="submit" value="DELETE Album">
+        </form>
+</div>
+
+ 

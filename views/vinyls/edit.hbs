@@ -1,0 +1,13 @@
+<h2>Edit Albums {{vinyl.artist}}</h2>
+
+<form action="/{{vinyl.id}}?_method= PUT" method="POST">
+    <label for="artist">Artist</label>
+        <input type="text" name="artist" value="{{vinyl.artist}}">
+    <label for="albumName">Album Name</label>
+        <input type="text" name="albumName" id="rating" value={{vinyl.albumName}}>
+        <label for="releaseDate">Release Date</label>
+            <input type="date" name="releaseDate" id="releaseDate" value="{{vinyl.releaseDate}}">
+    <label for="imageLink">Image Link</label>
+            <input type="text" name="imgLink" id="imageLink" value="{{vinyl.imgLink}}">
+         <input class="btn btn-outline-danger" type="submit" value="Submit">
+</form>
