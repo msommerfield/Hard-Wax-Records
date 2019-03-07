@@ -1,6 +1,5 @@
 <h2>Edit Albums {{vinyl.artist}}</h2>
-
-<form action="/{{vinyl.id}}?_method= PUT" method="POST">
+<form action="/{{vinyl.id}}?_method=PUT" method="POST">
     <label for="artist">Artist</label>
         <input type="text" name="artist" value="{{vinyl.artist}}">
     <label for="albumName">Album Name</label>
@@ -11,3 +10,7 @@
             <input type="text" name="imgLink" id="imageLink" value="{{vinyl.imgLink}}">
          <input class="btn btn-outline-danger" type="submit" value="Submit">
 </form>
+        <form class="delete-form"action="/{{vinyl.id}}?_method=DELETE" method="POST">
+            <input class="btn btn-outline-danger" type="submit" value="DELETE Album">
+        </form>
+</div>

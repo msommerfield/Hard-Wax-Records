@@ -6,17 +6,23 @@
 
 <h3>Ratings</h3>
 {{#each vinyl.reviews}}
-    {{!-- each review --}}
-    {{#each rating}}
-        {{!-- each rating --}}
-         {{starReview}} Star
-    {{/each}}  
-<h3>Reviews</h3>
-<p>{{content}}</p>
+    <p>{{userName}}</p>
+   <p>{{content}}</p>
+
 {{/each}}
-        <form class="delete-form"action="/{{vinyl.id}}?_method=DELETE" method="POST">
-            <input class="btn btn-outline-danger" type="submit" value="DELETE Album">
-        </form>
-</div>
+
+{{!-- <div>
+    <h2>Rating</h2>
+    {{#each vinyl.ratings}}
+        <p>{{content}}</p>
+    {{/each}}  
+</div> --}}
+
+<a href="/{{vinyl._id}}/edit">
+<button class="btn btn-outline-danger" type="submit">Edit Album</button>
+</a>
+
+
+
 
  

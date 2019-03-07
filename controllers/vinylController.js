@@ -10,7 +10,7 @@ const vinylController = {
     },
     new: (req, res) => {
         res.render('vinyls/new', {
-            userId: req.params.userId
+            vinylId: req.params.vinylId
         })
     },
     create: (req, res) => {
@@ -20,24 +20,23 @@ const vinylController = {
         })
     },
     show: (req, res) => {
-        Vinyl.findById(req.params.userId).then(vinyl => {
-            res.render('vinyls/show', {vinyl, userId: req.params.userId})
+        Vinyl.findById(req.params.vinylId).then(vinyl => {
+            res.render('vinyls/show', {vinyl, vinylId: req.params.vinylId})
         })
     },
     edit: (req, res) => {
-        Vinyl.findById(req.params.vinylId)
+        Vinyl.findByIdAndUpdate(req.params.vinylId)
         .then(vinyl => {
-            res.render('vinyls/edit', {vinyl}
-            )
+            res.render('vinyls/edit', { vinyl })
         })
 },
     update: (req, res) => {
-        Vinyl.findByIdAndUpdate(req.params.vinylId, {content: req.body.content}, {new: true}).then(updatedVinyl => {
+        Vinyl.findByIdAndUpdate(req.params.vinylId, req.body, {new: true}).then(vinyl => {
             res.redirect(`/`)
         })
     },
     delete: (req, res) => {
-        Vinyl.findByIdAndDelete(req.params.userId).then(() => {
+        Vinyl.findByIdAndDelete(req.params.vinylId).then(() => {
             res.redirect(`/`)
         })
 }
