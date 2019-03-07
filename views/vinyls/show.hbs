@@ -1,37 +1,37 @@
 <div class="text-center">
-<img src="{{vinyl.imgLink}}" alt="Album Cover">
-<h2>{{vinyl.artist}}</h2>
-<h2>{{vinyl.albumName}}</h2>
-<h6>Release Date:{{vinyl.releaseDate}}</h6> 
+    <img src="{{vinyl.imgLink}}" alt="Album Cover">
+    <h2>{{vinyl.artist}}</h2>
+    <h2>{{vinyl.albumName}}</h2>
+    <h6>Release Date:{{vinyl.releaseDate}}</h6>
 
-<h3>Ratings</h3>
-{{#each vinyl.reviews}}
-    <p>{{userName}}</p>
-   <p>{{content}}</p>
+    <h3>Reviews</h3>
+    {{#each vinyl.reviews}}
+    {{!-- <p>userName{userName}}</p> --}}
+    <p>{{content}}</p>
+    {{/each}}
+  <h3>Ratings</h3>
+    {{#each vinyl.starReview}}
+    {{!-- <p>userName{userName}}</p> --}}
+    <p>{{content}}</p>
+    {{/each}}
+    
 
-{{/each}}
-
-{{!-- <div>
-    <h2>Rating</h2>
-    {{#each vinyl.ratings}}
-        <p>{{content}}</p>
-    {{/each}}  
-</div> --}}
-
-<h3>Add it a review</h3>
-
-<form action="/vinyls/{{userId}}/chirps" method="POST">
-    <div>
-        <input type="text" name="content" placeholder="content" />
-    </div>
-    <button class="btn" type="submit">Create Tweet</button>
-</form>
-
-<a href="/{{vinyl._id}}/edit">
-<button class="btn btn-outline-danger" type="submit">Edit Album</button>
-</a>
-
-
-
-
- 
+    <h3>Add it a Review</h3>
+    <form action="/vinyls/{{vinylId}}/reviews" method="POST">
+        <div>
+            <input type="text" name="content" placeholder="review">
+        </div>
+        <div>
+            <label for="rating">Rating</label>
+            <input type="number" min="1" max="5" name="rating" id="rating">
+        </div>
+        <button class="btn btn-outline-danger" type="submit">+Add Review</button>
+    </form>
+{{!-- Delete Review Button --}}
+    <form class="delete-form"action="/{{vinyl.id}}?_method=DELETE" method="POST">
+            <input class="btn btn-outline-danger" type="submit" value="DELETE Album">
+        </form>
+{{!-- Edit Albums Button --}}
+    <a href="/{{vinyl._id}}/edit">
+        <button class="btn btn-outline-danger" type="submit">Edit Album</button>
+    </a>

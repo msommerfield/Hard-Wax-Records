@@ -5,7 +5,7 @@ const router = express.Router()
 // Require Controllers
 
 const vinylController = require('../controllers/vinylController.js')
-// const vinylController = require('../controllers/vinylController.js')
+// const reviewController = require('../controllers/reviewController.js')
 
 //Vinyl Routes
 router.get('/', vinylController.index)
@@ -17,12 +17,12 @@ router.put('/:vinylId', vinylController.update)
 router.delete('/:vinylId', vinylController.delete)
 
 //Review Routes
-router.get('/vinyls/:vinylId/reviews', reviewController.index)
-router.get('/vinyls/:vinylId/reviews/new', viewController.new)
-router.post('/vinyls/:vinylId/reviews', viewController.create)
-router.get('/vinyls/:vinylId/reviews/:reviewlId', viewController.show)
-router.get('/vinyls/:vinylId/reviews/:reviewId/edit', viewController.edit)
-router.put('/vinyls/:vinylId/reviews/:reviewlId', viewController.update)
-router.delete('/vinyls/:vinylId/reviews/:reviewlId', viewController.delete)
+// router.get('/vinyls/:vinylId/reviews', reviewController.index)
+// router.get('/vinyls/:vinylId/reviews/new', viewController.new)
+// router.post('/vinyls/:vinylId/reviews', viewController.create)
+// router.get('/vinyls/:vinylId/reviews/:reviewlId', viewController.show)
+// router.get('/vinyls/:vinylId/reviews/:reviewId/edit', viewController.edit)
+// router.put('/vinyls/:vinylId/reviews/:reviewlId', viewController.update)
+// router.delete('/vinyls/:vinylId/reviews/:reviewlId', viewController.delete)
 
 module.exports = router
