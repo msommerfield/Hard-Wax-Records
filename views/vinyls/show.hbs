@@ -8,6 +8,8 @@
     {{#each vinyl.reviews}}
     {{!-- <p>userName{userName}}</p> --}}
     <p>{{content}}</p>
+
+    
     {{/each}}
   <h3>Ratings</h3>
     {{#each vinyl.starReview}}
@@ -17,7 +19,7 @@
     
 
     <h3>Add it a Review</h3>
-    <form action="/vinyls/{{vinylId}}/reviews" method="POST">
+    <form action="/vinyls/{{vinylId}}/reviews/" method="POST">
         <div>
             <input type="text" name="content" placeholder="review">
         </div>
@@ -32,7 +34,9 @@
             <input class="btn btn-outline-danger" type="submit" value="Delete Review">
         </form>
 {{!-- Delete Rating Button --}}
-
+   <form class="delete-form"action="/{{vinyl.rating}}?_method=DELETE" method="POST">
+            <input class="btn btn-outline-danger" type="submit" value="Delete Review">
+        </form>
 {{!-- Edit Albums Button --}}
     <a href="/{{vinyl._id}}/edit">
         <button class="btn btn-outline-danger" type="submit">Edit Album</button>
