@@ -1,44 +1,24 @@
-// const User = require('../models/User.js')
-// const { Vinyl } = require('../models/Vinyl.js')
+const Review = require('../models/Review.js')
+const { Vinyl } = require('../models/Vinyl.js')
 
-// const reviewController = {
-//     new: (req, res) => {
-//         res.render('chirps/new', {
-//             userId: req.params.userId
-//         })
-//       },
-//     create: (req, res) => {
-//         User.findById(req.params.userId)
-//             .then(user => {
-//                 Vinyl.create({
-//                     content: req.body.content,
-//                     comments: [{content: 'Vinyl is dope'}]
-//                 })
-//                 .then(newVinyl => {
-//                     user.vinyls.push(newVinyl)
-//                     user.save()
-//                     res.redirect(`/users/${req.params.userId}`)
-//                 })
-//             })
-//         },
-//     edit: (req, res) => {
-//         Vinyl.findById(req.params.vinylId)
-//         .then(vinyl => {
-//             res.render('vinyls/edit', {
-//                 vinyl,
-//                 userId: req.params.userId,
-//                 vinylId: req.params.vinylId
-//             })
-//         })
-//     },
-//     delete: (req, res) => {
-//         res.send("hi from delete")
-//         Vinyl.findByIdAndDelete(req.params.vinylId).then(() => {
-//             console.log('deleted vinyl')
-//             res.redirect(`/users/${req.params.userId}`)
-//         })
-//     }
-// }
+const reviewController = {
+    create: (req, res) => {
+        Review.create(req.body).then(review => {
+            review.save()
+            res.redirect('/')
+        })
+    },
+    show: (req, res) => {
+        Review.findById(req.params.vinylId.reviewId).then(vinyl => {
+            res.render('vinyls/:vinylId/reviews/:reviewlId', {vinyl, vinylId: req.params.reviewId})
+        })
+    },
+    delete: (req, res) => {
+        Vinyl.findByIdAndDelete(req.params.vinylId.reviewId).then(() => {
+            res.redirect(`/`)
+        })
+}
+}
 
-// module.exports = vinylController
+module.exports = reviewController
 

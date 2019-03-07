@@ -18,6 +18,15 @@
     {{/each}}  
 </div> --}}
 
+<h3>Add it a review</h3>
+
+<form action="/vinyls/{{userId}}/chirps" method="POST">
+    <div>
+        <input type="text" name="content" placeholder="content" />
+    </div>
+    <button class="btn" type="submit">Create Tweet</button>
+</form>
+
 <a href="/{{vinyl._id}}/edit">
 <button class="btn btn-outline-danger" type="submit">Edit Album</button>
 </a>
