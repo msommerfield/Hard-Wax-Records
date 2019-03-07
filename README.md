@@ -6,12 +6,12 @@
 
 ## Project Links
 [Trello Board](https://trello.com/b/9fpi8TCx/hard-wax-records)
-[Heroku](https://dashboard.heroku.com/apps/warm-spire-96531) //change link to actual heroku of project
+[Heroku](https://damp-meadow-81873.herokuapp.com/)
 
 ## Technical Specifications
 This application has:
 
-*Three models – one representing someone using the application (a user), one representing a collection of records (a vinyl) and a third model for the reviews of records (a review).
+*Three models – one representing an album (a vinyl), one representing a collection of reviews (a review) and a third model for the ratings of records (a rating).
 *Complete RESTful routes for at least one resource (a project) with GET, POST, PUT, and DELETE.
 *Uses Mongo queries and the Mongoose module to interact with a document database.
 *Promises to help build more complex queries!
