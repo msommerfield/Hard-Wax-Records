@@ -22,9 +22,9 @@ This application has:
 *Deployed online and accessible to the public via Heroku
 
 ## ERDs
-<img src="IMG_0802.jpg" alt="ERDs">
+<img src="./wireframing_and_ERDs/IMG_0802.jpg" alt="ERDs">
 
 ## Wireframes
-<img src="IMG_0799.jpg" alt="Landing Page">
-<img src="IMG_0800.jpg" alt="Purchase Records and Leave a Review">
+<img src="./wireframing_and_ERDs/IMG_0799.jpg" alt="Landing Page">
+<img src="./wireframing_and_ERDs/IMG_0800.jpg" alt="Purchase Records and Leave a Review">
 
