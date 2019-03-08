@@ -16,6 +16,7 @@ router.get('/:vinylId', vinylController.show)
 router.get('/:vinylId/edit', vinylController.edit)
 router.put('/:vinylId', vinylController.update)
 router.delete('/:vinylId', vinylController.delete)
+//merge
 
 // Review Routes
 // router.get('/vinyls/:vinylId/reviews/new', reviewController.new)
