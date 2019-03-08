@@ -25,8 +25,8 @@ router.get('/vinyls/:vinylId/reviews/:reviewId', reviewController.show)
 router.delete('/vinyls/:vinylId/reviews/:reviewId', reviewController.delete)
 
 //Rating Routes
-// router.post('/vinyls/:vinylId/ratings', ratingController.create)
-// router.get('/vinyls/:vinylId/ratings/:ratingId', ratingController.show)
-// router.delete('/vinyls/:vinylId/ratings/:ratingId', ratingController.delete)
+router.post('/vinyls/:vinylId/ratings', ratingController.create)
+router.get('/vinyls/:vinylId/ratings/:ratingId', ratingController.show)
+router.delete('/vinyls/:vinylId/ratings/:ratingId', ratingController.delete)
 
 module.exports = router

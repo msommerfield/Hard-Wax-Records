@@ -28,10 +28,6 @@ const reviewController = {
         }).catch((error) => {
             console.log(error)
         })
-
-        // Vinyl.findByIdAndDelete(req.params.vinylId.reviewId).then(() => {
-        //     res.redirect(`/${vinylId}`)
-        // })
 }
 }
 
