@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('../db/connection')
 const Review = require('./Review.js').schema
-const Rating = require('./Rating.js').schema
+// const Rating = require('./Rating.js').schema
 const Schema = mongoose.Schema
 
 
@@ -10,7 +10,7 @@ const VinylSchema = new Schema({
   releaseDate: Date,
   imgLink: String,
   reviews: [Review],
-  ratings: [Rating]
+  // ratings: [Rating]
 });
 
 

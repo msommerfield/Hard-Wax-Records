@@ -1,7 +1,7 @@
 const mongoose = require("./connection.js");
 const Rating = require("../models/Rating.js");
 const Vinyl = require("../models/Vinyl.js");
-const Review = require("../models/Review");
+// const Review = require("../models/Review");
 
 //Ratings
 

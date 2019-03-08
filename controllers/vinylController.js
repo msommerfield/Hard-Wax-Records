@@ -1,4 +1,4 @@
-const Rating = require('../models/Rating.js')
+// const Rating = require('../models/Rating.js')
 const  Vinyl  = require('../models/Vinyl.js')
 const Review = require('../models/Review.js')
 
