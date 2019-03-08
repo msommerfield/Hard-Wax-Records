@@ -1,7 +1,7 @@
 const mongoose = require("./connection.js");
 const Rating = require("../models/Rating.js");
 const Vinyl = require("../models/Vinyl.js");
-// const Review = require("../models/Review");
+const Review = require("../models/Review");
 
 //Ratings
 
@@ -41,50 +41,42 @@ const tupacrating= new Rating ({
 //Reviews
 const atlreview = new Review ({
     userName: "Kanye",
-    content: "Andre and Big Boi display a unique ability to describe ghetto life while offering up life-affirming possibilities",
-    rating: [atlrating]
+    content: "Andre and Big Boi display a unique ability to describe ghetto life while offering up life-affirming possibilities"
 });
 
 const ageofreview = new Review ({
     userName: "Bonnie",
-    content: "A synthesiser melody follows, wide-eyed with wonderment, then a melancholy melodica, sighing in the breeze.",
-    rating: [ageofrating]
+    content: "A synthesiser melody follows, wide-eyed with wonderment, then a melancholy melodica, sighing in the breeze."
 });
 
 const kanyereview = new Review ({
     userName: "Grace",
-    content: "I miss the old Kanye, but his head was still big then.",
-    rating: [kanyerating]
+    content: "I miss the old Kanye, but his head was still big then."
 });
 
 const whitreview= new Review ({
     userName: "Freddy",
-    content: "Can a duo be a supergroup? Because they are.",
-    rating: [whitrating]
+    content: "Can a duo be a supergroup? Because they are."
 });
 
 const angreview= new Review ({
     userName: "Emily",
-    content: "She's dear diarying and has a truly unique voice.",
-    rating: [angelrating]
+    content: "She's dear diarying and has a truly unique voice."
 });
 
 const blondereview= new Review ({
     userName: "Sadie",
-    content: "Feminist dream pop masterwork in the best way possible.",
-    rating: [blonderating]
+    content: "Feminist dream pop masterwork in the best way possible."
 });
 
 const guccireview= new Review ({
     userName: "Lindsey",
-    content: "Living off of the same road that Gucci Mane did, it is awesome to hear about all of his stories at the Texaco on Gresham, Bouldercrest Rd, and throughout East Atlanta. His music is dope and it makes it even better that he continued to write while in prison. Also, what better way to get into the Christmas spirit than with East Atlanta Santa himself!.",
-    rating: [guccirating]
+    content: "Living off of the same road that Gucci Mane did, it is awesome to hear about all of his stories at the Texaco on Gresham, Bouldercrest Rd, and throughout East Atlanta. His music is dope and it makes it even better that he continued to write while in prison. Also, what better way to get into the Christmas spirit than with East Atlanta Santa himself!."
 });
 
 const tupacreview= new Review ({
     userName: "Cam",
-    content: "The magnum opus of his career.",
-    rating: [tupacrating]
+    content: "The magnum opus of his career."
 });
 
 
@@ -95,7 +87,8 @@ const atliens = new Vinyl({
     albumName: "ATLiens",
     releaseDate: new Date("<1996-08-27>"),
     imgLink: "https://i.imgur.com/FaRMoWI.jpg",
-    reviews: [atlreview]
+    reviews: [atlreview],
+    ratings: [atlrating]
   });
 
   const consent = new Vinyl({
@@ -103,7 +96,8 @@ const atliens = new Vinyl({
       albumName: "Corruption and Lies",
       releaseDate: new Date("<1983-05-02>"),
       imgLink: "https://i.imgur.com/ANVAkVu.jpg",
-      reviews: [ageofreview]
+      reviews: [ageofreview],
+      ratings: [ageofrating]
   });
 
   const kanye = new Vinyl({
@@ -111,7 +105,8 @@ const atliens = new Vinyl({
     albumName: "Graduation",
     releaseDate: new Date("<2007-09-11>"),
     imgLink: "https://i.imgur.com/99upHZP.jpg",
-    reviews: [kanyereview]
+    reviews: [kanyereview],
+    ratings: [kanyerating]
   });
 
   const whit = new Vinyl({
@@ -119,7 +114,8 @@ const atliens = new Vinyl({
       albumName: "Light Upon the Lake",
       releaseDate: new Date("<2016-06-03>"),
       imgLink: "https://i.imgur.com/CfDITJv.jpg",
-      reviews: [whitreview]
+      reviews: [whitreview],
+      ratings: [whitrating]
   });
 
   const angel = new Vinyl({
@@ -127,7 +123,8 @@ const atliens = new Vinyl({
     albumName: "My Woman",
     releaseDate: new Date("<2016-09-02>"),
     imgLink: "https://i.imgur.com/jkD3nlw.jpg",
-    reviews: [angreview]
+    reviews: [angreview],
+    ratings: [angelrating]
 });
 
 const blondeRed = new Vinyl({
@@ -135,7 +132,8 @@ const blondeRed = new Vinyl({
     albumName: "23",
     releaseDate: new Date("<2007-04-10>"),
     imgLink: "https://i.imgur.com/G7lA1eN.jpg",
-    reviews: [blondereview]
+    reviews: [blondereview],
+    ratings: [blonderating]
 });
 
 const gucci = new Vinyl({
@@ -143,7 +141,8 @@ const gucci = new Vinyl({
     albumName: "Droptopwop",
     releaseDate: new Date("<2017-05-26>"),
     imgLink: "https://i.imgur.com/KQUCOng.jpg",
-    reviews: [guccireview]
+    reviews: [guccireview],
+    ratings: [guccirating]
 });
 
 const  tupac= new Vinyl({
@@ -151,7 +150,8 @@ const  tupac= new Vinyl({
     albumName: "Me Against the World",
     releaseDate: new Date("<1995-03-14>"),
     imgLink: "https://i.imgur.com/HH81h28.jpg",
-    reviews: [tupacreview]
+    reviews: [tupacreview],
+    ratings: [tupacrating]
 });
 
 

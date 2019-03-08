@@ -7,7 +7,8 @@ const ratingController = {
         let vinylId = req.params.vinylId
         Rating.create(req.body).then(rating => {
             Vinyl.findById(req.params.vinylId).then(vinyl => {
-                vinyl.ratingss.push(rating)
+                vinyl.ratings.push(rating)
+                console.log(rating)
                 vinyl.save()
                 res.redirect(`/${vinylId}`)
         })

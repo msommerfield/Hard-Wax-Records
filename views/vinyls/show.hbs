@@ -2,42 +2,47 @@
     <img src="{{vinyl.imgLink}}" alt="Album Cover">
     <h2>{{vinyl.artist}}</h2>
     <h2>{{vinyl.albumName}}</h2>
+
     <h6>Release Date:{{vinyl.releaseDate}}</h6>
 
     <h3>Reviews</h3>
     {{#each vinyl.reviews}}
-    {{!-- <p>userName{userName}}</p> --}}
-    {{!-- vinyls/:vinylId/reviews/:reviewId --}}
+
     <p>{{content}}</p>
-        <form class="delete-form"action="/vinyls/{{../vinyl._id}}/reviews/{{_id}}?_method=DELETE" method="POST">
-            <input class="btn btn-outline-danger" type="submit" value="Delete Review">
-        </form>
+    <form class="delete-form" action="/vinyls/{{../vinyl._id}}/reviews/{{_id}}?_method=DELETE" method="POST">
+        <input class="btn btn-outline-danger" type="submit" value="Delete Review">
+    </form>
 
     {{!-- <div>{{_id}}</div> --}}
     {{/each}}
-  <h3>Ratings</h3>
-    {{#each vinyl.starReview}}
-    <p>{{content}}</p>
-    {{!-- Button that deletes rating --}}
-  <form class="delete-form"action="/vinyls{{../vinyl._id}}/ratings/{{_id}}?_method=DELETE" method="POST">
-            <input class="btn btn-outline-danger" type="submit" value="Delete Rating">
-        </form>
-        {{/each}}
-    
-
     <h3>Add a Review</h3>
     <form action="/vinyls/{{vinylId}}/reviews/" method="POST">
         <div>
             <input type="text" name="content" placeholder="review">
+            <button class="btn btn-outline-danger" type="submit">+Add Review</button>
         </div>
-        <h3>Add a Rating</h3>
-        <div>
-            <label for="rating">Rating</label>
-            <input type="number" min="1" max="5" name="rating" id="rating">
-        </div>
-        <button class="btn btn-outline-danger" type="submit">+Add Review</button>
     </form>
- 
+
+
+    <h3>Ratings</h3>
+    {{#each vinyl.ratings}}
+    <p>{{starReview}}</p>
+    {{!-- Button that deletes rating --}}
+    <form class="delete-form" action="/vinyls/{{../vinyl._id}}/ratings/{{_id}}?_method=DELETE" method="POST">
+        <input class="btn btn-outline-danger" type="submit" value="Delete Rating">
+    </form>
+     {{/each}}
+
+    <h3>Add a Rating</h3>
+    <form action="/vinyls/{{vinylId}}/ratings/" method="POST">
+        <div>
+        <input type="number" min="1" max="5" name="starReview" id="rating">
+        <button class="btn btn-outline-danger" type="submit" value="+ Add Rating">(+)</button>
+    </div>
+    </form>
+</div>
+
+
     <a href="/{{vinyl._id}}/edit">
-        <button class="btn btn-outline-danger" type="submit">Edit Album</button>
+        <button class="btn btn-outline-danger">Edit Album</button>
     </a> 
