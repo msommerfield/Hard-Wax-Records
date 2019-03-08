@@ -8,7 +8,6 @@ const ReviewSchema = new Schema({
         type: Date,
         default: Date.now()
     },
-    rating: []
 });
 
 module.exports = mongoose.model('Review', ReviewSchema)

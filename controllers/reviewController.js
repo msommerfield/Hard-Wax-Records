@@ -1,6 +1,7 @@
 const Review = require('../models/Review.js')
 const Vinyl = require('../models/Vinyl.js')
 
+
 const reviewController = {
     create: (req, res) => {
         let vinylId = req.params.vinylId
@@ -18,9 +19,19 @@ const reviewController = {
         })
     },
     delete: (req, res) => {
-        Vinyl.findByIdAndDelete(req.params.vinylId.reviewId).then(() => {
-            res.redirect(`/${vinylId}`)
+        Vinyl.findById(req.params.vinylId)
+        .then((vinyl) => {
+            const review = vinyl.reviews.id(req.params.reviewId).remove()
+            vinyl.save()
+        }).then(() => {
+            res.redirect(`/${req.params.vinylId}`)
+        }).catch((error) => {
+            console.log(error)
         })
+
+        // Vinyl.findByIdAndDelete(req.params.vinylId.reviewId).then(() => {
+        //     res.redirect(`/${vinylId}`)
+        // })
 }
 }
 
